@@ -19,6 +19,6 @@
 -->
 
 <resources>
-    <!-- Screen timeout default = 30 seconds -->
-    <integer name="def_screen_off_timeout">30000</integer>
+    <!-- Screen timeout default = 2 minutes -->
+    <integer name="def_screen_off_timeout">120000</integer>
 </resources>

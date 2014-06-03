@@ -148,8 +148,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.boot.selinux=disabled
 
 # Storage switch
- PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.vold.switchablepair=sdcard0,sdcard1
+# PRODUCT_PROPERTY_OVERRIDES += \
+#    persist.sys.vold.switchablepair=sdcard0,sdcard1
 
 # Dalvik VM config for 768MB RAM devices
 PRODUCT_PROPERTY_OVERRIDES += \
