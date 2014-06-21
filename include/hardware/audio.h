@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2011 The Android Open Source Project
- * Copyright (c) 2011-2013, The Linux Foundation. All rights reserved.
+ * Copyright (c) 2011-2014, The Linux Foundation. All rights reserved.
  * Not a Contribution.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -148,7 +148,7 @@ __BEGIN_DECLS
 #define AUDIO_OFFLOAD_CODEC_WMA_BIT_PER_SAMPLE "music_offload_wma_bit_per_sample"
 #define AUDIO_OFFLOAD_CODEC_WMA_CHANNEL_MASK "music_offload_wma_channel_mask"
 #define AUDIO_OFFLOAD_CODEC_WMA_ENCODE_OPTION "music_offload_wma_encode_option"
-#define AUDIO_OFFLOAD_CODEC_WMA_ENCODE_OPTION1"music_offload_wma_encode_option1"
+#define AUDIO_OFFLOAD_CODEC_WMA_ENCODE_OPTION1 "music_offload_wma_encode_option1"
 #define AUDIO_OFFLOAD_CODEC_WMA_ENCODE_OPTION2 "music_offload_wma_encode_option2"
 #define AUDIO_OFFLOAD_CODEC_FORMAT  "music_offload_codec_format"
 
@@ -731,9 +731,10 @@ struct audio_hw_device {
 #endif
 
 #ifdef AUDIO_LISTEN_ENABLED
-    /** This method opens the listen session and returns a handle */
+    /** This method creates the listen session and returns handle */
     int (*open_listen_session)(struct audio_hw_device *dev,
-                               struct listen_session** handle);
+                              listen_open_params_t *params,
+                              struct listen_session** handle);
 
     /** This method closes the listen session  */
     int (*close_listen_session)(struct audio_hw_device *dev,
@@ -743,7 +744,8 @@ struct audio_hw_device {
     int (*set_mad_observer)(struct audio_hw_device *dev,
                             listen_callback_t cb_func);
 
-    /*  This method is used for setting listen hal specfic parameters.
+    /**
+     *   This method is used for setting listen hal specfic parameters.
      *  If multiple paramets are set in one call and setting any one of them
      *  fails it will return failure.
      */
