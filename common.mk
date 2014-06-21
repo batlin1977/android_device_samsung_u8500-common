@@ -175,5 +175,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapmaxfree=4m
 PRODUCT_TAGS += dalvik.gc.type-precise
 
+# TWRP fstab
+PRODUCT_COPY_FILES += \
+    $(COMMON_PATH)/rootdir/recovery.fstab:recovery/root/etc/recovery.fstab
+
 # Use the non-open-source parts, if they're present
 include vendor/samsung/u8500-common/vendor-common.mk
