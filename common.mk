@@ -23,6 +23,7 @@ PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # NovaThor Settings
 PRODUCT_PACKAGES += \
+    CMFileManager \
     NovaThorSettings
 
 # U8500 Common init

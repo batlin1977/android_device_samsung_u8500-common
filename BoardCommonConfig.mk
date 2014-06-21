@@ -138,6 +138,9 @@ BOARD_SEPOLICY_UNION += \
 # Delete the line below when SELinux is enabled on all devices
 COMMON_GLOBAL_CFLAGS += -DRECOVERY_CANT_USE_CONFIG_EXT4_FS_XATTR
 
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/u8500-common
+
 # Misc
 COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
