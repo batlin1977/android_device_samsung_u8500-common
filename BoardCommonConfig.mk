@@ -48,7 +48,8 @@ ARCH_ARM_HAVE_NEON := true
 TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 
-TARGET_GCC_VERSION_EXP := 4.8
+TARGET_GCC_VERSION_EXP := 4.9
+USE_SABERMOD_ANDROIDEABI_49 := true
 TARGET_USE_O3 := true
 STRICT_ALIASING := true
 SUPPRES_UNUSED_WARNING := true
@@ -142,6 +143,11 @@ TW_MAX_BRIGHTNESS := 255
 TW_NO_USB_STORAGE := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
+
+
+# Releasetools
+TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/samsung/u8500-common/releasetools/u8500_ota_from_target_files
+TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := ./device/samsung/u8500-common/releasetools/u8500_img_from_target_files
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
