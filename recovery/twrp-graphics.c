@@ -66,14 +66,14 @@ static GRFont *gr_font = 0;
 static GGLContext *gr_context = 0;
 static GGLSurface gr_font_texture;
 static GGLSurface gr_framebuffer[NUM_BUFFERS];
-GGLSurface gr_mem_surface;
+static GGLSurface gr_mem_surface;
 static unsigned gr_active_fb = 0;
 static unsigned double_buffering = 0;
 
 static int gr_fb_fd = -1;
 static int gr_vt_fd = -1;
 
-struct fb_var_screeninfo vi;
+static struct fb_var_screeninfo vi;
 static struct fb_fix_screeninfo fi;
 
 #ifdef PRINT_SCREENINFO
@@ -454,13 +454,7 @@ int gr_textExWH(int x, int y, const char *s, void* pFont, int max_width, int max
     return x;
 }
 
-int gr_text(int x, int y, const char *s, ...)
-{
-    return gr_text_impl(x, y, s, 0);
-}
-
-int gr_text_impl(int x, int y, const char *s, int bold)
-
+int twgr_text(int x, int y, const char *s)
 {
     GGLContext *gl = gr_context;
     GRFont *font = gr_font;
