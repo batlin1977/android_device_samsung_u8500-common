@@ -114,7 +114,10 @@ BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/musb-ux500.0/musb-hdrc/gadget/lun%d/file"
 
 # Charging mode
-BOARD_CHARGING_MODE_BOOTING_LPM := /sys/devices/virtual/power_supply/battery/lpm_mode
+# BOARD_CHARGING_MODE_BOOTING_LPM := /sys/devices/virtual/power_supply/battery/lpm_mode
+BOARD_LPM_BOOT_ARGUMENT_NAME := lpm_boot
+BOARD_LPM_BOOT_ARGUMENT_VALUE := 1
+BOARD_CHARGER_RES := device/samsung/u8500-common/res/charger
 
 # Recovery
 BOARD_UMS_LUNFILE := "/sys/devices/platform/musb-ux500.0/musb-hdrc/gadget/lun0/file"
